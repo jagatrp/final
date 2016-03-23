@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Create Movie</title>
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+    </h:head>
+    <h:body>
+        <div class="title" name="title">
+            <p>Enter Movie details</p>
+        </div>
+        <h:form>
+            <h:panelGrid columns="2">
+                <h:outputLabel value="Title: "/>
+                <h:inputText value="#{movieController.movie.title}"/>
+
+
+                <h:outputLabel value="Description: "/>
+                <h:inputText value="#{movieController.movie.description}"/>
+
+                <h:outputLabel value="Rating "/>
+                <h:inputText value="#{movieController.movie.rating}"/>
+
+                <h:outputLabel value="Date of Release "/>
+                <h:inputText value="#{movieController.movie.dateOfRelease}"/>
+
+                <h:outputLabel value="Director Name "/>
+                <h:inputText value="#{movieController.movie.directorName}"/>
+
+
+                <h:outputLabel value="Running Length "/>
+                <h:inputText value="#{movieController.movie.runningLength}"/>
+
+                <h:outputLabel value="Movie Language "/>
+                <h:inputText value="#{movieController.movie.movieLanguage}"/>
+
+
+            </h:panelGrid>
+            <h:commandButton value="Create Movie" action="#{movieController.doCreateMovie}"/>
+            <br />
+            <h:link outcome="movieList.xhtml" value="Movie List" />
+        </h:form>
+    </h:body>
+</html>
+

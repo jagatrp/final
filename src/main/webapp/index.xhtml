@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>List of customer</title>
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+    </h:head>
+    <h:body>
+        <div class="title" name="title">
+            <p>List of Customers</p>
+        </div>
+        
+        <hr/>
+        <div class="wrapper" name="wrapper">
+            <div class="container" name="container">
+                <div class="listCustomer" name="listCustomer">
+                    <h:dataTable value="#{customerController.customerList}" var="customer" border="1">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="ID"/>
+                            </f:facet>
+                            <h:outputText value="#{customer.id}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Fullname"/>
+                            </f:facet>
+                            <h:outputText value="#{customer.firstName}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Lastname"/>
+                            </f:facet>
+                            <h:outputText value="#{customer.lastName}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Address"/>
+                            </f:facet>
+                            <h:outputText value="#{customer.streetAddress}"/>
+                        </h:column>
+                    </h:dataTable>
+                </div>
+                <h:form>
+                    <ul>
+                        <li>
+                            <div class="home" name="home">
+                                <h:link outcome="index.xhtml" value="Home" /><br />
+                            </div>
+                        </li>
+                        <li>
+                            <div class="home" name="createCustomer">
+                                <h:link outcome="createCustomer.xhtml" value="Create Customer"/><br />
+                            </div>
+                        </li>
+                        <li>
+                            <div class="listCustomer" name="listCustomer">
+                                <h:link outcome="index.xhtml" value="List Customer" /><br />
+                            </div>
+                        </li>
+                        <li>
+                            <div class="createGame" name="createGame">
+                                <h:link outcome="createGame.xhtml" value="Create Game"/><br />
+                            </div>
+                        </li>
+                        <li>
+                            <div class="gameList" name="gameList">
+                                <h:link outcome="gameList.xhtml" value="List Games" /><br />
+                            </div>
+                        </li>
+                        <li>
+                            <div class="createMovie" name="createMovie">
+                                <h:link outcome="createMovie.xhtml" value="Create Movie"/><br />
+                            </div>
+                        </li>
+                        <li>
+                            <div class="movieList" name="movieList">
+                                <h:link outcome="movieList.xhtml" value="List Movie" /><br />
+                            </div>
+                        </li>
+                        <li>
+                            <div class="createRent" name="createRent">
+                                <h:link outcome="createRent.xhtml" value="Create Rent"/><br />
+                            </div>
+                        </li>
+                        <li>
+                            <div class="rentList" name="rentList">
+                                <h:link outcome="rentList.xhtml" value="List Rent" /><br />
+                            </div>  
+                        </li>
+                    </ul>                                                  
+                </h:form>  
+            </div>
+        </div>
+
+
+    </h:body>
+</html>
+

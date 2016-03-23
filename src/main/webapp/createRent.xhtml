@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+    </h:head>
+    <h:body>
+        <div class="title" name="title">
+            <p>Enter Rent details</p>
+        </div>
+        <h:form>
+            <h:panelGrid columns="2">
+
+                <h:outputLabel value="Select Customer: "/>
+
+                <h:selectOneMenu value="#{rentController.customerId}">
+                    <f:selectItems value="#{customerController.customerList}" var="customer" 
+                                   itemValue="#{customer.id}" itemLabel="#{customer.firstName}" />
+                </h:selectOneMenu>
+
+                <h:outputLabel value="Select Game: "/>
+                <h:selectManyListbox value="#{rentController.gameItemIds}">
+                    <f:selectItems value="#{gameController.gameList}" var="game" 
+                                   itemValue="#{game.id}" itemLabel="#{game.title}" />
+                </h:selectManyListbox>
+
+
+                <h:outputLabel value="Select Movie "/>
+                <h:selectManyListbox value="#{rentController.movieItemIds}">
+                    <f:selectItems value="#{movieController.movieList}" var="movie" 
+                                   itemValue="#{movie.id}" itemLabel="#{movie.title}" />
+                </h:selectManyListbox>
+
+                <h:outputLabel value="Number of Days Hired: "/>
+                <h:inputText value="#{rentController.rent.numberOfDaysHired}"/>
+
+
+                <h:outputLabel value="Due Date: "/>
+                <h:inputText value="#{rentController.rent.dueDate}"/>
+
+
+
+            </h:panelGrid>
+            <h:commandButton value="Create Rent" action="#{rentController.doCreateRent}"/>
+            <br />
+            <h:link outcome="rentList.xhtml" value="List Rent" />
+        </h:form>
+    </h:body>
+</html>
+

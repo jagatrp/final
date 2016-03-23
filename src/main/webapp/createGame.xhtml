@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>create Game</title>
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+    </h:head>
+    <h:body>
+        <div class="title" name="title">
+            <p>Enter game details</p>
+        </div>
+        <div class="formContainer" name="formContainer">
+            <h:form>
+            <h:panelGrid columns="2">
+                <h:outputLabel value="Title: "/>
+                <h:inputText value="#{gameController.game.title}"/>
+
+
+                <h:outputLabel value="Description: "/>
+                <h:inputText value="#{gameController.game.description}"/>
+
+                <h:outputLabel value="Rating "/>
+                <h:inputText value="#{gameController.game.rating}"/>
+
+                <h:outputLabel value="Date of Release "/>
+                <h:inputText value="#{gameController.game.dateOfRelease}"/>
+
+                <h:outputLabel value="Studio Name "/>
+                <h:inputText value="#{gameController.game.studioName}"/>
+
+
+                <h:outputLabel value="Platform "/>
+                <h:inputText value="#{gameController.game.platForm}"/>
+
+
+            </h:panelGrid>
+            <h:commandButton value="Create Game" action="#{gameController.doCreateGame}"/>
+            <br />
+            <h:link outcome="gameList.xhtml" value="Game List" />
+        </h:form>
+        </div>
+        
+    </h:body>
+</html>
